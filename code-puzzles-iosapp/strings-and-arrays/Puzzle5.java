@@ -32,8 +32,8 @@ public class Puzzle5{
      * Compresses strings following this rule:
      * <p> replace every group of char repeating more than one time with {char}{times}
      *
-     * Time complexity ~ 
-     * Space complexity ~ 
+     * Time complexity ~ linear time
+     * Space complexity ~ constant space
      *
      * @param str given string 
      * 
@@ -41,7 +41,7 @@ public class Puzzle5{
      **/
     public static String compress(String str){
 	
-	if(str == null || str.length() == 0)
+	if(str == null || str.length() == 0) //constant time
 	    return str;
 
 	int strLen = str.length();
@@ -54,7 +54,7 @@ public class Puzzle5{
 
 	    repeated = 1;
 	  
-	    while(i++ < strLen-1 && current == str.charAt(i))
+	    while(i++ < strLen-1 && current == str.charAt(i)) // loop continues here, so still linear
 		repeated++;
 		
 	    
