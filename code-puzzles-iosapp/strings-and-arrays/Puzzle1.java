@@ -10,7 +10,7 @@ public class Puzzle1{
     public static void main(String[] args){
 		
 	long startTime, endTime, duration = 0, total = 0;
-	String[] testCases = {"", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./"};
+	String[] testCases = {null, "", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./"};
 	int [] durations = new int [testCases.length];
 
 	for (String test : testCases){
@@ -41,6 +41,9 @@ public class Puzzle1{
      **/
     public static boolean isUnique(String str){
 	
+	if(str == null)
+	    return false;
+
 	int length = str.length(); // O(1) a micro optimization, calculate the length only once
 	
 	for(int i=0; i<length; i++){ // O(n)

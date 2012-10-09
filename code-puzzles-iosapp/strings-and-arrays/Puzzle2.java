@@ -12,7 +12,7 @@ public class Puzzle2{
     public static void main(String[] args){
 		
 	long startTime, endTime, duration = 0, total = 0;
-	String[] testCases = {"", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./",
+	String[] testCases = {null, "", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./",
 			      "", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./"};
 	int [] durations = new int [testCases.length];
 	    
@@ -42,6 +42,9 @@ public class Puzzle2{
 	HashMap<String, Integer> countMap = new HashMap<String, Integer>(); // O(1) constant time
 	
 	for(String word : words){ // O(n) linear time, n is the length of the array
+	    if(word == null)
+		word = "null";
+
 	    if(countMap.containsKey(word)) 
 		countMap.put(word, countMap.get(word) + 1); // hashmap insert and find, both constant time
 	    else

@@ -9,7 +9,10 @@ public class Puzzle3{
     public static void main(String[] args){
 		
 	long startTime, endTime, duration = 0, total = 0;
-	String[] testCases = {"", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./"};
+	String[] testCases = {null, "", "a", "aa", "aba", "bab", "test", "okay", "qwertyuiop[]asdfghjkl;'zxcvbnm,./",
+			      "A man, a plan, a canal, Panama",
+			      "Go hang a salami. I'm a lasagna hog.",
+			      "Madam I'm Adam."};
 	int [] durations = new int [testCases.length];
 
 	for (String test : testCases){
@@ -39,12 +42,19 @@ public class Puzzle3{
      * @return if palindrome or not
      **/
     public static boolean isPalindrome(String str){
+
+	if(str == null)
+	    return false;
 	
-	int length = str.length()/2; // O(1) a micro optimization, calculate the length only once
+	str = str.replaceAll("\\W", "");// clear punctuation
+	str = str.toLowerCase(); // lower case
+
+	int length = str.length(); // O(1) a micro optimization, calculate the length only once
 	int halfLength = length/2; // O(1) a micro optimization, halve the length only once
-       
+	int endIndex = length-1;
+
 	for(int i=0; i<halfLength; i++){ // O(n/2) ~ as n goes infitiniy, it becomes O(n) linear time  
-	    if(str.charAt(i) != str.charAt(length-1-i)) // chartAt constant time
+	    if(str.charAt(i) != str.charAt(endIndex-i)) // chartAt constant time
 		return false; 
 	}
 
