@@ -1,5 +1,11 @@
+/**
+ * @author Arda Yigithan Orhan <ayorhan@ayorhan.com>
+ * @version 1.0
+ * @since 2012-10-09
+ **/
+
 import java.util.HashMap;
-public class SolutionsSAA{
+public class Puzzle1{
     
     public static void main(String[] args){
 		
@@ -24,10 +30,15 @@ public class SolutionsSAA{
     }
 
     
-
-    
-    // Time complexity ~ Quadratic Time O(n^2)
-    // Space complexity ~ Constant Space
+    /**
+     * Checks if all characters in a given string are unique
+     *
+     * Time complexity ~ Quadratic Time O(n^2)
+     * Space complexity ~ Constant Space
+     *
+     * @param str given string
+     * @return if unique or not
+     **/
     public static boolean isUnique(String str){
 	
 	int length = str.length(); // O(1) a micro optimization, calculate the length only once
@@ -41,8 +52,15 @@ public class SolutionsSAA{
 	
     }
 
-    // Time complexity ~ Linear Time O(n)
-    // Space complexity ~ Linear Space
+    /**
+     * Checks if all characters in a given string are unique
+     *
+     * Time complexity ~ Linear Time O(n)
+     * Space complexity ~ Linear Space
+     *
+     * @param str given string
+     * @return if unique or not
+     **/
     public static boolean isUnique2(String str){ 
 	int length = str.length(); // O(1) a micro optimization, calculate the length only once
 
